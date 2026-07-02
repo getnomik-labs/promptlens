@@ -50,6 +50,37 @@ export ANTHROPIC_API_KEY=sk-ant-...
 promptlens run suite.yaml
 ```
 
+## Running from source (cloned, not installed via npm)
+
+If you've cloned this repo directly rather than installing via `npm install -g promptlens`, a couple of things behave differently:
+
+**`node_modules` isn't included in the repo** — that's normal, not a bug. Install dependencies first:
+
+```bash
+npm install
+```
+
+**Run the CLI with `node`, not the bare `promptlens` command** — `promptlens` only resolves as a command once it's installed globally or linked. From inside the cloned folder:
+
+```bash
+node bin/promptlens.js run examples/basic/suite.yaml
+```
+
+**Want the bare `promptlens` command to work locally anyway?** Link it:
+
+```bash
+npm link
+promptlens run examples/basic/suite.yaml
+```
+
+**`npx promptlens ...` won't work from inside this folder.** `npx` is for running a package that's published to the npm registry — it doesn't resolve a local source checkout the way `node bin/promptlens.js` does. Use `npx promptlens` once the package is actually published and you're using it in some *other* project, not while developing inside this repo.
+
+Sanity check that everything's wired up:
+
+```bash
+npm test
+```
+
 ## Writing a suite
 
 ```yaml
