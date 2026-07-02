@@ -1,0 +1,20 @@
+name: Basic Demo Suite
+provider: mock
+model: mock-echo-1
+system: "You are a helpful assistant."
+
+cases:
+  - name: "echoes the prompt"
+    prompt: "hello world"
+    expect:
+      contains: "hello world"
+
+  - name: "output is not empty"
+    prompt: "anything"
+    expect:
+      min_length: 5
+
+  - name: "this one will fail on purpose"
+    prompt: "test"
+    expect:
+      contains: "this text will never appear"

@@ -1,0 +1,49 @@
+{
+  "name": "promptlens",
+  "version": "0.1.0",
+  "description": "Open-source prompt regression testing & eval harness for LLM apps. Define test cases, run them against any model, catch regressions before they ship.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "promptlens": "./bin/promptlens.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "example": "node bin/promptlens.js run examples/basic/suite.yaml"
+  },
+  "keywords": [
+    "llm",
+    "prompt-engineering",
+    "eval",
+    "testing",
+    "regression-testing",
+    "anthropic",
+    "claude",
+    "ci-cd",
+    "ai-testing"
+  ],
+  "author": "Getnomik Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getnomik-labs/promptlens.git"
+  },
+  "homepage": "https://github.com/getnomik-labs/promptlens#readme",
+  "bugs": {
+    "url": "https://github.com/getnomik-labs/promptlens/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "js-yaml": "^4.1.0"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ]
+}
